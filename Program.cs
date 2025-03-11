@@ -1,4 +1,5 @@
-﻿using InventoryManagementSystem;
+﻿// use InventoryManagementSystem namespace 
+using InventoryManagementSystem;
 using System;
 
 class Program
@@ -6,8 +7,11 @@ class Program
     static void Main()
     {
         InventoryManager inventory = new InventoryManager();
+
+        // run infinitely/continously until user chooses to exit;
         while (true)
         {
+            // Clear console for a cleaner user interface
             Console.Clear();
             Console.WriteLine("=================================");
             Console.WriteLine("   INVENTORY MANAGEMENT SYSTEM   ");
@@ -21,6 +25,7 @@ class Program
             Console.WriteLine("=================================");
             Console.Write("Enter your choice: ");
 
+            // Ensures the user's menu selection is a valid integer.
             if (!int.TryParse(Console.ReadLine(), out int choice))
             {
                 Console.WriteLine("Invalid input. Please enter a number between 1 and 6.");
@@ -69,6 +74,7 @@ class Program
                 case 5:
                     Console.WriteLine($"Total Inventory Value: {inventory.GetTotalValue():C}");
                     break;
+                // Exit the program
                 case 6:
                     Console.WriteLine("Exiting...");
                     return;
