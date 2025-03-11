@@ -30,13 +30,14 @@ class Program
             {
                 Console.WriteLine("Invalid input. Please enter a number between 1 and 6.");
                 Console.ReadKey();
-                continue;
+
             }
 
             Console.Clear();
             switch (choice)
             {
                 case 1:
+                    Console.WriteLine("Adding a Product:");
                     Console.Write("Enter Product ID: ");
                     if (!int.TryParse(Console.ReadLine(), out int id) || id <= 0)
                     {
